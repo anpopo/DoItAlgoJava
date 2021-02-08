@@ -6,15 +6,15 @@ public class Practice_Q2<E> {
 	private E[] stk; // 스택 본체
 
 	// 실행 시 예외 : 스택이 비어있음
-	public static class EmptyIntStackException extends RuntimeException {
-		public EmptyIntStackException() {
+	public static class EmptyGstackException extends RuntimeException {
+		public EmptyGstackException() {
 
 		}
 	}
 
 	// 실행 시 예외 : 스택이 가득참
-	public static class OverflowIntStackException extends RuntimeException {
-		public OverflowIntStackException() {
+	public static class OverflowGstackException extends RuntimeException {
+		public OverflowGstackException() {
 
 		}
 	}
@@ -29,26 +29,25 @@ public class Practice_Q2<E> {
 			max = 0;
 		}
 	}
-	
 
 	// 스택에 x를 푸시
-	public E push(E x) throws EmptyIntStackException {
+	public E push(E x) throws EmptyGstackException {
 		if (ptr >= max) // 스택이 가득 참
-			throw new OverflowIntStackException();
+			throw new OverflowGstackException();
 		return stk[ptr++] = x;
 	}
 
 	// 스택에서 데이터를 팝 (꼭대기의 데이터를 꺼냄)
-	public E pop() throws EmptyIntStackException {
+	public E pop() throws EmptyGstackException {
 		if (ptr <= 0) // 스택이 비어 있음
-			throw new EmptyIntStackException();
+			throw new OverflowGstackException();
 		return stk[--ptr];
 	}
 
 	// 스택에서 데이터를 피크(꼭대기의 데이터를 살펴 봄)
-	public E peek() throws EmptyIntStackException {
+	public E peek() throws EmptyGstackException {
 		if (ptr <= 0) // 스택이 비어 있음
-			throw new EmptyIntStackException();
+			throw new OverflowGstackException();
 		return stk[ptr - 1];
 	}
 

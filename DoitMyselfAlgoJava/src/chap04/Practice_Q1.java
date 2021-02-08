@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Practice_Q1 {
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
 		
 		IntStack s = new IntStack(64);  // 최대 64개를 푸시할 수 있는 스택 : max = 64; ptr = 0;
